@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from 'zod'
 
 const envSchema = z.object({
   // Database
@@ -27,6 +27,6 @@ const envSchema = z.object({
 
   // Environment
   NODE_ENV: z.enum(['development', 'test', 'production']),
-});
+})
 
-export const env = envSchema.parse(process.env);
+export const env = envSchema.parse(process.env)

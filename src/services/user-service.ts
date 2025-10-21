@@ -1,33 +1,35 @@
-import { User } from '@/types';
+import { User } from '@/types'
 
 export class UserService {
   static async getUsers(): Promise<User[]> {
     try {
-      const response = await fetch('/api/users');
+      const response = await fetch('/api/users')
       if (!response.ok) {
-        throw new Error('Failed to fetch users');
+        throw new Error('Failed to fetch users')
       }
-      return response.json();
+      return response.json()
     } catch (error) {
-      console.error('Error fetching users:', error);
-      throw error;
+      console.error('Error fetching users:', error)
+      throw error
     }
   }
 
   static async getUserById(id: string): Promise<User> {
     try {
-      const response = await fetch(`/api/users/${id}`);
+      const response = await fetch(`/api/users/${id}`)
       if (!response.ok) {
-        throw new Error('Failed to fetch user');
+        throw new Error('Failed to fetch user')
       }
-      return response.json();
+      return response.json()
     } catch (error) {
-      console.error('Error fetching user:', error);
-      throw error;
+      console.error('Error fetching user:', error)
+      throw error
     }
   }
 
-  static async createUser(userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>): Promise<User> {
+  static async createUser(
+    userData: Omit<User, 'id' | 'createdAt' | 'updatedAt'>
+  ): Promise<User> {
     try {
       const response = await fetch('/api/users', {
         method: 'POST',
@@ -35,14 +37,14 @@ export class UserService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
-      });
+      })
       if (!response.ok) {
-        throw new Error('Failed to create user');
+        throw new Error('Failed to create user')
       }
-      return response.json();
+      return response.json()
     } catch (error) {
-      console.error('Error creating user:', error);
-      throw error;
+      console.error('Error creating user:', error)
+      throw error
     }
   }
 
@@ -54,14 +56,14 @@ export class UserService {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userData),
-      });
+      })
       if (!response.ok) {
-        throw new Error('Failed to update user');
+        throw new Error('Failed to update user')
       }
-      return response.json();
+      return response.json()
     } catch (error) {
-      console.error('Error updating user:', error);
-      throw error;
+      console.error('Error updating user:', error)
+      throw error
     }
   }
 
@@ -69,13 +71,13 @@ export class UserService {
     try {
       const response = await fetch(`/api/users/${id}`, {
         method: 'DELETE',
-      });
+      })
       if (!response.ok) {
-        throw new Error('Failed to delete user');
+        throw new Error('Failed to delete user')
       }
     } catch (error) {
-      console.error('Error deleting user:', error);
-      throw error;
+      console.error('Error deleting user:', error)
+      throw error
     }
   }
 }

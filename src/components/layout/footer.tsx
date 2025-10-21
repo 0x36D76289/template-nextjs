@@ -1,16 +1,18 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div>
-            <h3 className="text-lg font-semibold mb-4">Mon Application</h3>
-            <p className="text-gray-300">La meilleure solution pour vos besoins.</p>
+            <h3 className="mb-4 text-lg font-semibold">Mon Application</h3>
+            <p className="text-gray-300">
+              La meilleure solution pour vos besoins.
+            </p>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-4">Produit</h4>
+            <h4 className="mb-4 text-sm font-semibold">Produit</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/about" className="hover:text-white">
@@ -30,7 +32,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-4">Support</h4>
+            <h4 className="mb-4 text-sm font-semibold">Support</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/contact" className="hover:text-white">
@@ -50,7 +52,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-semibold mb-4">Entreprise</h4>
+            <h4 className="mb-4 text-sm font-semibold">Entreprise</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
                 <Link href="/about" className="hover:text-white">
@@ -70,10 +72,10 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+        <div className="mt-8 border-t border-gray-700 pt-8 text-center text-gray-300">
           <p>&copy; 2024 Mon Application. Tous droits réservés.</p>
         </div>
       </div>
     </footer>
-  );
+  )
 }

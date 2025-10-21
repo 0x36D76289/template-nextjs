@@ -1,16 +1,20 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="text-center py-12">
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">Projet introuvable</h2>
-      <p className="text-gray-600 mb-6">Le projet que vous recherchez n&apos;existe pas.</p>
+    <div className="py-12 text-center">
+      <h2 className="mb-4 text-2xl font-bold text-gray-900">
+        Projet introuvable
+      </h2>
+      <p className="mb-6 text-gray-600">
+        Le projet que vous recherchez n&apos;existe pas.
+      </p>
       <Link
         href="/projects"
-        className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors"
+        className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
       >
         Retour aux projets
       </Link>
     </div>
-  );
+  )
 }

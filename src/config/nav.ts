@@ -1,37 +1,37 @@
 export const navConfig = {
   mainNav: [
     {
-      title: 'Accueil',
-      href: '/',
+      title: 'Accueil' as const,
+      href: '/' as const,
     },
     {
-      title: 'À propos',
-      href: '/about',
+      title: 'À propos' as const,
+      href: '/about' as const,
     },
     {
-      title: 'Tarifs',
-      href: '/pricing',
+      title: 'Tarifs' as const,
+      href: '/pricing' as const,
     },
     {
-      title: 'Contact',
-      href: '/contact',
+      title: 'Contact' as const,
+      href: '/contact' as const,
     },
   ],
   sidebarNav: [
     {
-      title: 'Dashboard',
-      href: '/dashboard',
-      icon: 'LayoutDashboard',
+      title: 'Dashboard' as const,
+      href: '/dashboard' as const,
+      icon: 'LayoutDashboard' as const,
     },
     {
-      title: 'Projets',
-      href: '/projects',
-      icon: 'Folder',
+      title: 'Projets' as const,
+      href: '/projects' as const,
+      icon: 'Folder' as const,
     },
     {
-      title: 'Profil',
-      href: '/profile',
-      icon: 'User',
+      title: 'Profil' as const,
+      href: '/profile' as const,
+      icon: 'User' as const,
     },
   ],
-};
+}

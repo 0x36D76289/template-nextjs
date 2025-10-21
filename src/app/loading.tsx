@@ -1,7 +1,10 @@
 export default function Loading() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+    <div className="flex min-h-screen items-center justify-center">
+      <div className="flex flex-col items-center gap-2">
+        <div className="border-primary h-32 w-32 animate-spin rounded-full border-t-2 border-b-2"></div>
+        <p className="text-muted-foreground text-sm">Chargement...</p>
+      </div>
     </div>
-  );
+  )
 }

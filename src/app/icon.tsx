@@ -1,6 +1,6 @@
-import { ImageResponse } from 'next/og';
+import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge';
+export const runtime = 'edge'
 
 export default async function Icon() {
   return new ImageResponse(
@@ -25,5 +25,5 @@ export default async function Icon() {
       width: 32,
       height: 32,
     }
-  );
+  )
 }

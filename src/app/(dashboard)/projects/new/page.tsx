@@ -1,38 +1,43 @@
-'use client';
+'use client'
 
-import Link from 'next/link';
-import { useState } from 'react';
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function NewProjectPage() {
   const [formData, setFormData] = useState({
     name: '',
     description: '',
     category: '',
-  });
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Logique de création du projet
-    console.log('Création du projet:', formData);
-  };
+    console.log('Création du projet:', formData)
+  }
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }));
-  };
+    }))
+  }
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900 mb-8">Nouveau projet</h1>
+      <h1 className="mb-8 text-3xl font-bold text-gray-900">Nouveau projet</h1>
 
       <div className="max-w-2xl">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="name"
+              className="mb-2 block text-sm font-medium text-gray-700"
+            >
               Nom du projet *
             </label>
             <input
@@ -41,13 +46,16 @@ export default function NewProjectPage() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="description"
+              className="mb-2 block text-sm font-medium text-gray-700"
+            >
               Description
             </label>
             <textarea
@@ -56,12 +64,15 @@ export default function NewProjectPage() {
               value={formData.description}
               onChange={handleChange}
               rows={4}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             />
           </div>
 
           <div>
-            <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="category"
+              className="mb-2 block text-sm font-medium text-gray-700"
+            >
               Catégorie
             </label>
             <select
@@ -69,7 +80,7 @@ export default function NewProjectPage() {
               name="category"
               value={formData.category}
               onChange={handleChange}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             >
               <option value="">Sélectionner une catégorie</option>
               <option value="web">Développement Web</option>
@@ -83,13 +94,13 @@ export default function NewProjectPage() {
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors"
+              className="rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
             >
               Créer le projet
             </button>
             <Link
               href="/projects"
-              className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-colors"
+              className="rounded-md border border-gray-300 px-6 py-3 font-medium text-gray-700 transition-colors hover:bg-gray-50"
             >
               Annuler
             </Link>
@@ -97,5 +108,5 @@ export default function NewProjectPage() {
         </form>
       </div>
     </div>
-  );
+  )
 }

@@ -1,86 +1,90 @@
 export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-16">
-      <div className="text-center mb-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Tarifs</h1>
-        <p className="text-xl text-gray-600">Choisissez le plan qui convient à vos besoins</p>
+      <div className="mb-16 text-center">
+        <h1 className="mb-4 text-4xl font-bold text-gray-900">Tarifs</h1>
+        <p className="text-xl text-gray-600">
+          Choisissez le plan qui convient à vos besoins
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
         {/* Plan Gratuit */}
-        <div className="border border-gray-200 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Gratuit</h3>
-          <p className="text-4xl font-bold text-gray-900 mb-6">
+        <div className="rounded-lg border border-gray-200 p-8">
+          <h3 className="mb-4 text-2xl font-bold text-gray-900">Gratuit</h3>
+          <p className="mb-6 text-4xl font-bold text-gray-900">
             0€<span className="text-lg font-normal text-gray-600">/mois</span>
           </p>
-          <ul className="space-y-3 mb-8">
+          <ul className="mb-8 space-y-3">
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Fonctionnalités de base
             </li>
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Support communautaire
             </li>
           </ul>
-          <button className="w-full bg-gray-100 text-gray-900 py-3 px-6 rounded-md font-medium hover:bg-gray-200 transition-colors">
+          <button className="w-full rounded-md bg-gray-100 px-6 py-3 font-medium text-gray-900 transition-colors hover:bg-gray-200">
             Commencer gratuitement
           </button>
         </div>
 
         {/* Plan Pro */}
-        <div className="border-2 border-blue-500 rounded-lg p-8 relative">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+        <div className="relative rounded-lg border-2 border-blue-500 p-8">
+          <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform">
+            <span className="rounded-full bg-blue-500 px-4 py-1 text-sm font-medium text-white">
               Populaire
             </span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Pro</h3>
-          <p className="text-4xl font-bold text-gray-900 mb-6">
+          <h3 className="mb-4 text-2xl font-bold text-gray-900">Pro</h3>
+          <p className="mb-6 text-4xl font-bold text-gray-900">
             29€<span className="text-lg font-normal text-gray-600">/mois</span>
           </p>
-          <ul className="space-y-3 mb-8">
+          <ul className="mb-8 space-y-3">
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Toutes les fonctionnalités
             </li>
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Support prioritaire
             </li>
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               API illimitée
             </li>
           </ul>
-          <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-md font-medium hover:bg-blue-700 transition-colors">
+          <button className="w-full rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700">
             Commencer l&apos;essai
           </button>
         </div>
 
         {/* Plan Entreprise */}
-        <div className="border border-gray-200 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Entreprise</h3>
-          <p className="text-4xl font-bold text-gray-900 mb-6">Contactez-nous</p>
-          <ul className="space-y-3 mb-8">
+        <div className="rounded-lg border border-gray-200 p-8">
+          <h3 className="mb-4 text-2xl font-bold text-gray-900">Entreprise</h3>
+          <p className="mb-6 text-4xl font-bold text-gray-900">
+            Contactez-nous
+          </p>
+          <ul className="mb-8 space-y-3">
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Fonctionnalités avancées
             </li>
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               Support dédié
             </li>
             <li className="flex items-center">
-              <span className="text-green-500 mr-2">✓</span>
+              <span className="mr-2 text-green-500">✓</span>
               SLA garanti
             </li>
           </ul>
-          <button className="w-full bg-gray-100 text-gray-900 py-3 px-6 rounded-md font-medium hover:bg-gray-200 transition-colors">
+          <button className="w-full rounded-md bg-gray-100 px-6 py-3 font-medium text-gray-900 transition-colors hover:bg-gray-200">
             Nous contacter
           </button>
         </div>
       </div>
     </div>
-  );
+  )
 }

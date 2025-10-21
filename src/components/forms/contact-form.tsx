@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,26 +10,31 @@ export function ContactForm() {
     email: '',
     subject: '',
     message: '',
-  });
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Logique d'envoi du message
-    console.log('Message envoyé:', formData);
-  };
+    console.log('Message envoyé:', formData)
+  }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }));
-  };
+    }))
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="name"
+            className="mb-1 block text-sm font-medium text-gray-700"
+          >
             Nom
           </label>
           <Input
@@ -43,7 +48,10 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="email"
+            className="mb-1 block text-sm font-medium text-gray-700"
+          >
             Email
           </label>
           <Input
@@ -58,7 +66,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="subject"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Sujet
         </label>
         <Input
@@ -72,7 +83,10 @@ export function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="message"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Message
         </label>
         <textarea
@@ -81,12 +95,12 @@ export function ContactForm() {
           value={formData.message}
           onChange={handleChange}
           rows={6}
-          className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full rounded-md border border-gray-300 px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
           required
         />
       </div>
 
       <Button type="submit">Envoyer le message</Button>
     </form>
-  );
+  )
 }

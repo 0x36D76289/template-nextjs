@@ -1,6 +1,6 @@
-import { ImageResponse } from 'next/og';
+import { ImageResponse } from 'next/og'
 
-export const runtime = 'edge';
+export const runtime = 'edge'
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -19,12 +19,14 @@ export default function OpenGraphImage() {
         }}
       >
         <div style={{ marginBottom: 16 }}>My Next.js App</div>
-        <div style={{ fontSize: 24, fontWeight: 400 }}>Modern web application</div>
+        <div style={{ fontSize: 24, fontWeight: 400 }}>
+          Modern web application
+        </div>
       </div>
     ),
     {
       width: 1200,
       height: 630,
     }
-  );
+  )
 }

@@ -1,19 +1,19 @@
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="text-center">
-        <h1 className="text-6xl font-bold text-gray-900 mb-4">404</h1>
-        <h2 className="text-2xl font-semibold text-gray-700 mb-4">Page introuvable</h2>
-        <p className="text-gray-600 mb-8">La page que vous recherchez n&apos;existe pas.</p>
-        <Link
-          href="/"
-          className="bg-blue-600 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-700 transition-colors inline-block"
-        >
-          Retour à l&apos;accueil
-        </Link>
-      </div>
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <h1 className="text-6xl font-bold">404</h1>
+      <h2 className="mt-4 text-2xl font-semibold">Page Non Trouvée</h2>
+      <p className="text-muted-foreground mt-2">
+        La page que vous recherchez n&apos;existe pas.
+      </p>
+      <Link
+        href="/"
+        className="bg-primary text-primary-foreground hover:bg-primary/90 mt-6 rounded-lg px-5 py-3 font-semibold transition-colors"
+      >
+        Retour à l&apos;accueil
+      </Link>
     </div>
-  );
+  )
 }

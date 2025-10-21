@@ -1,14 +1,18 @@
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib/utils'
 
 interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full';
+  size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
 
-export function Container({ className, size = 'lg', ...props }: ContainerProps) {
+export function Container({
+  className,
+  size = 'lg',
+  ...props
+}: ContainerProps) {
   return (
     <div
       className={cn(
-        'mx-auto px-4 sm:px-6 lg:px-8',
+        'mx-auto w-full px-4 sm:px-6 lg:px-8',
         {
           'max-w-screen-sm': size === 'sm',
           'max-w-screen-md': size === 'md',
@@ -20,5 +24,5 @@ export function Container({ className, size = 'lg', ...props }: ContainerProps) 
       )}
       {...props}
     />
-  );
+  )
 }

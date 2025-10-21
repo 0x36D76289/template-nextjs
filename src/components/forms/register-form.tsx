@@ -1,8 +1,8 @@
-'use client';
+'use client'
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -10,25 +10,28 @@ export function RegisterForm() {
     email: '',
     password: '',
     confirmPassword: '',
-  });
+  })
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Logique d'inscription
-    console.log('Inscription:', formData);
-  };
+    console.log('Inscription:', formData)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
-    }));
-  };
+    }))
+  }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="name"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Nom complet
         </label>
         <Input
@@ -42,7 +45,10 @@ export function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="email"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Email
         </label>
         <Input
@@ -56,7 +62,10 @@ export function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="password"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Mot de passe
         </label>
         <Input
@@ -70,7 +79,10 @@ export function RegisterForm() {
       </div>
 
       <div>
-        <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-1">
+        <label
+          htmlFor="confirmPassword"
+          className="mb-1 block text-sm font-medium text-gray-700"
+        >
           Confirmer le mot de passe
         </label>
         <Input
@@ -87,5 +99,5 @@ export function RegisterForm() {
         S&apos;inscrire
       </Button>
     </form>
-  );
+  )
 }

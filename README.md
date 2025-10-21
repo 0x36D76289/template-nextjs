@@ -4,202 +4,152 @@
 
 ## 📁 Arborescence Complète
 
-```
-my-nextjs-app/
-├── .vscode/                        # Configuration VS Code
-│   ├── settings.json
-│   └── extensions.json
-│
-├── public/                         # Assets statiques
-│   ├── images/
-│   │   ├── logo.svg
-│   │   └── hero.png
-│   ├── fonts/
-│   └── favicon.ico
-│
-├── src/                           # Code source de l'application
-│   ├── app/                       # App Router (Next.js 13+)
-│   │   ├── (auth)/               # Route group pour l'authentification
-│   │   │   ├── layout.tsx        # Layout spécifique auth
-│   │   │   ├── login/
-│   │   │   │   ├── page.tsx
-│   │   │   │   └── loading.tsx
-│   │   │   ├── register/
-│   │   │   │   └── page.tsx
-│   │   │   └── forgot-password/
-│   │   │       └── page.tsx
-│   │   │
-│   │   ├── (marketing)/          # Route group pour marketing
-│   │   │   ├── layout.tsx        # Layout spécifique marketing
-│   │   │   ├── page.tsx          # Page d'accueil
-│   │   │   ├── about/
-│   │   │   │   └── page.tsx
-│   │   │   ├── pricing/
-│   │   │   │   └── page.tsx
-│   │   │   └── contact/
-│   │   │       └── page.tsx
-│   │   │
-│   │   ├── (dashboard)/          # Route group pour dashboard
-│   │   │   ├── layout.tsx        # Layout avec sidebar/nav
-│   │   │   ├── dashboard/
-│   │   │   │   ├── page.tsx
-│   │   │   │   ├── loading.tsx
-│   │   │   │   └── error.tsx
-│   │   │   ├── profile/
-│   │   │   │   ├── page.tsx
-│   │   │   │   └── settings/
-│   │   │   │       └── page.tsx
-│   │   │   └── projects/
-│   │   │       ├── page.tsx
-│   │   │       ├── [id]/
-│   │   │       │   ├── page.tsx     # Dynamic route
-│   │   │       │   ├── loading.tsx
-│   │   │       │   ├── error.tsx
-│   │   │       │   └── not-found.tsx
-│   │   │       └── new/
-│   │   │           └── page.tsx
-│   │   │
-│   │   ├── api/                  # Route Handlers (API)
-│   │   │   ├── auth/
-│   │   │   │   └── [...nextauth]/
-│   │   │   │       └── route.ts
-│   │   │   ├── users/
-│   │   │   │   ├── route.ts      # GET, POST /api/users
-│   │   │   │   └── [id]/
-│   │   │   │       └── route.ts  # GET, PUT, DELETE /api/users/:id
-│   │   │   ├── projects/
-│   │   │   │   └── route.ts
-│   │   │   └── webhooks/
-│   │   │       └── stripe/
-│   │   │           └── route.ts
-│   │   │
-│   │   ├── blog/                 # Section blog
-│   │   │   ├── page.tsx
-│   │   │   ├── loading.tsx
-│   │   │   ├── [slug]/
-│   │   │   │   ├── page.tsx      # Article dynamique
-│   │   │   │   ├── loading.tsx
-│   │   │   │   └── not-found.tsx
-│   │   │   └── category/
-│   │   │       └── [category]/
-│   │   │           └── page.tsx
-│   │   │
-│   │   ├── _components/          # Composants privés (pas routables)
-│   │   │   ├── header.tsx
-│   │   │   ├── footer.tsx
-│   │   │   └── sidebar.tsx
-│   │   │
-│   │   ├── layout.tsx            # Root Layout (obligatoire)
-│   │   ├── loading.tsx           # Loading UI global
-│   │   ├── error.tsx             # Error boundary global
-│   │   ├── not-found.tsx         # 404 page
-│   │   ├── global-error.tsx      # Error boundary racine
-│   │   ├── template.tsx          # Template (optionnel)
-│   │   │
-│   │   ├── manifest.ts           # Web App Manifest
-│   │   ├── sitemap.ts            # Sitemap dynamique
-│   │   ├── robots.ts             # Robots.txt dynamique
-│   │   ├── opengraph-image.tsx   # OG Image dynamique
-│   │   └── icon.tsx              # Favicon dynamique
-│   │
-│   ├── components/               # Composants réutilisables
-│   │   ├── ui/                   # Composants UI de base
-│   │   │   ├── button.tsx
-│   │   │   ├── input.tsx
-│   │   │   ├── card.tsx
-│   │   │   ├── dialog.tsx
-│   │   │   ├── dropdown.tsx
-│   │   │   ├── modal.tsx
-│   │   │   ├── toast.tsx
-│   │   │   ├── skeleton.tsx
-│   │   │   ├── spinner.tsx
-│   │   │   └── badge.tsx
-│   │   │
-│   │   ├── forms/                # Composants de formulaires
-│   │   │   ├── login-form.tsx
-│   │   │   ├── register-form.tsx
-│   │   │   ├── contact-form.tsx
-│   │   │   └── search-form.tsx
-│   │   │
-│   │   ├── layout/               # Composants de mise en page
-│   │   │   ├── navbar.tsx
-│   │   │   ├── sidebar.tsx
-│   │   │   ├── footer.tsx
-│   │   │   └── container.tsx
-│   │   │
-│   │   └── shared/               # Composants partagés
-│   │       ├── image-upload.tsx
-│   │       ├── data-table.tsx
-│   │       ├── pagination.tsx
-│   │       └── breadcrumbs.tsx
-│   │
-│   ├── lib/                      # Utilitaires et configurations
-│   │   ├── utils.ts              # Fonctions utilitaires générales
-│   │   ├── cn.ts                 # Classnames utility (Tailwind)
-│   │   ├── validations.ts        # Schémas de validation (Zod)
-│   │   ├── constants.ts          # Constantes globales
-│   │   ├── db/                   # Configuration base de données
-│   │   │   ├── index.ts
-│   │   │   ├── schema.ts         # Schéma Drizzle/Prisma
-│   │   │   └── queries.ts        # Requêtes réutilisables
-│   │   ├── auth/                 # Configuration auth
-│   │   │   ├── config.ts
-│   │   │   └── session.ts
-│   │   └── api/                  # Clients API
-│   │       ├── client.ts
-│   │       └── endpoints.ts
-│   │
-│   ├── hooks/                    # Custom React Hooks
-│   │   ├── use-toast.ts
-│   │   ├── use-media-query.ts
-│   │   ├── use-local-storage.ts
-│   │   ├── use-debounce.ts
-│   │   ├── use-infinite-scroll.ts
-│   │   └── use-auth.ts
-│   │
-│   ├── actions/                  # Server Actions
-│   │   ├── auth.ts               # Actions d'authentification
-│   │   ├── users.ts              # Actions utilisateurs
-│   │   ├── projects.ts           # Actions projets
-│   │   └── posts.ts              # Actions posts
-│   │
-│   ├── services/                 # Services métier
-│   │   ├── user-service.ts
-│   │   ├── project-service.ts
-│   │   ├── email-service.ts
-│   │   └── payment-service.ts
-│   │
-│   ├── types/                    # Types TypeScript
-│   │   ├── index.ts              # Types principaux
-│   │   ├── api.ts                # Types API
-│   │   ├── auth.ts               # Types authentification
-│   │   ├── database.ts           # Types base de données
-│   │   └── components.ts         # Types composants
-│   │
-│   ├── config/                   # Configuration de l'app
-│   │   ├── site.ts               # Configuration du site
-│   │   ├── nav.ts                # Configuration navigation
-│   │   └── env.ts                # Variables d'environnement typées
-│   │
-│   ├── styles/                   # Styles globaux
-│   │   ├── globals.css           # Styles globaux + Tailwind
-│   │   ├── fonts.css             # Polices personnalisées
-│   │   └── animations.css        # Animations personnalisées
-│   │
-│   └── middleware.ts             # Middleware Next.js
-│
-├── .env.local                    # Variables d'environnement locales
-├── .env.example                  # Exemple de variables d'environnement
-├── .eslintrc.json               # Configuration ESLint
-├── .gitignore                   # Fichiers ignorés par Git
-├── .prettierrc                  # Configuration Prettier
-├── next.config.js               # Configuration Next.js
-├── package.json                 # Dépendances et scripts
-├── postcss.config.js            # Configuration PostCSS
-├── tailwind.config.ts           # Configuration Tailwind CSS
-├── tsconfig.json                # Configuration TypeScript
-└── README.md                    # Documentation du projet
-```
+````
+.
+|-- README.md
+|-- STRUCTURE.md
+|-- eslint.config.mjs
+|-- next-env.d.ts
+|-- next.config.ts
+|-- package.json
+|-- pnpm-lock.yaml
+|-- postcss.config.mjs
+|-- public
+|   |-- file.svg
+|   |-- fonts
+|   |-- globe.svg
+|   |-- images
+|   |-- next.svg
+|   |-- vercel.svg
+|   `-- window.svg
+|-- src
+|   |-- actions
+|   |   `-- auth.ts
+|   |-- app
+|   |   |-- (auth)
+|   |   |   |-- forgot-password
+|   |   |   |   `-- page.tsx
+|   |   |   |-- layout.tsx
+|   |   |   |-- login
+|   |   |   |   |-- loading.tsx
+|   |   |   |   `-- page.tsx
+|   |   |   `-- register
+|   |   |       `-- page.tsx
+|   |   |-- (dashboard)
+|   |   |   |-- _components
+|   |   |   |-- dashboard
+|   |   |   |   |-- error.tsx
+|   |   |   |   |-- loading.tsx
+|   |   |   |   `-- page.tsx
+|   |   |   |-- layout.tsx
+|   |   |   |-- profile
+|   |   |   |   |-- page.tsx
+|   |   |   |   `-- settings
+|   |   |   |       `-- page.tsx
+|   |   |   `-- projects
+|   |   |       |-- [id]
+|   |   |       |   |-- error.tsx
+|   |   |       |   |-- loading.tsx
+|   |   |       |   |-- not-found.tsx
+|   |   |       |   `-- page.tsx
+|   |   |       |-- new
+|   |   |       |   `-- page.tsx
+|   |   |       `-- page.tsx
+|   |   |-- (marketing)
+|   |   |   |-- about
+|   |   |   |   `-- page.tsx
+|   |   |   |-- contact
+|   |   |   |   `-- page.tsx
+|   |   |   |-- layout.tsx
+|   |   |   |-- page.tsx
+|   |   |   `-- pricing
+|   |   |       `-- page.tsx
+|   |   |-- _components
+|   |   |   |-- footer.tsx
+|   |   |   |-- header.tsx
+|   |   |   `-- sidebar.tsx
+|   |   |-- api
+|   |   |   |-- auth
+|   |   |   |   `-- [...nextauth]
+|   |   |   |       `-- route.ts
+|   |   |   |-- projects
+|   |   |   |   `-- route.ts
+|   |   |   |-- users
+|   |   |   |   |-- [id]
+|   |   |   |   |   `-- route.ts
+|   |   |   |   `-- route.ts
+|   |   |   `-- webhooks
+|   |   |       `-- stripe
+|   |   |           `-- route.ts
+|   |   |-- blog
+|   |   |   |-- [slug]
+|   |   |   |   |-- loading.tsx
+|   |   |   |   |-- not-found.tsx
+|   |   |   |   `-- page.tsx
+|   |   |   |-- category
+|   |   |   |   `-- [category]
+|   |   |   |       `-- page.tsx
+|   |   |   |-- loading.tsx
+|   |   |   `-- page.tsx
+|   |   |-- error.tsx
+|   |   |-- favicon.ico
+|   |   |-- global-error.tsx
+|   |   |-- globals.css
+|   |   |-- icon.tsx
+|   |   |-- layout.tsx
+|   |   |-- loading.tsx
+|   |   |-- manifest.ts
+|   |   |-- not-found.tsx
+|   |   |-- opengraph-image.tsx
+|   |   |-- page.tsx
+|   |   |-- robots.ts
+|   |   |-- sitemap.ts
+|   |   `-- template.tsx
+|   |-- components
+|   |   |-- forms
+|   |   |   |-- contact-form.tsx
+|   |   |   |-- login-form.tsx
+|   |   |   |-- register-form.tsx
+|   |   |   `-- search-form.tsx
+|   |   |-- layout
+|   |   |   |-- container.tsx
+|   |   |   |-- footer.tsx
+|   |   |   `-- navbar.tsx
+|   |   |-- shared
+|   |   `-- ui
+|   |       |-- button.tsx
+|   |       |-- card.tsx
+|   |       |-- dialog.tsx
+|   |       `-- input.tsx
+|   |-- config
+|   |   |-- env.ts
+|   |   |-- nav.ts
+|   |   `-- site.ts
+|   |-- hooks
+|   |   |-- use-debounce.ts
+|   |   |-- use-media-query.ts
+|   |   `-- use-toast.ts
+|   |-- lib
+|   |   |-- api
+|   |   |-- auth
+|   |   |   `-- config.ts
+|   |   |-- constants.ts
+|   |   |-- db
+|   |   |-- utils.ts
+|   |   `-- validations.ts
+|   |-- middleware.ts
+|   |-- services
+|   |   `-- user-service.ts
+|   |-- styles
+|   `-- types
+|       |-- api.ts
+|       |-- auth.ts
+|       `-- index.ts
+|-- tailwind.config.ts
+|-- tsconfig.json
+`-- tsconfig.tsbuildinfo
+
+82 directories, 93 files```
 
 ## 📝 Fichiers de Configuration Essentiels
 
@@ -219,15 +169,15 @@ const nextConfig = {
       },
     ],
   },
-};
+}
 
-module.exports = nextConfig;
-```
+module.exports = nextConfig
+````
 
 ### `tailwind.config.ts`
 
 ```typescript
-import type { Config } from 'tailwindcss';
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
@@ -247,9 +197,9 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+}
 
-export default config;
+export default config
 ```
 
 ### `tsconfig.json`
@@ -314,29 +264,29 @@ export default function RootLayout({
 ### `src/middleware.ts`
 
 ```typescript
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
   // Ajouter des headers, rediriger, etc.
-  const response = NextResponse.next();
-  response.headers.set('x-custom-header', 'my-value');
-  return response;
+  const response = NextResponse.next()
+  response.headers.set('x-custom-header', 'my-value')
+  return response
 }
 
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
-};
+}
 ```
 
 ### `src/lib/utils.ts`
 
 ```typescript
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return twMerge(clsx(inputs))
 }
 ```
 

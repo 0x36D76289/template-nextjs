@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   name: 'Mon App',
   description: 'Description de mon application',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-};
+}
 
 export const API_ROUTES = {
   users: '/api/users',
@@ -14,7 +14,7 @@ export const API_ROUTES = {
     logout: '/api/auth/logout',
     session: '/api/auth/session',
   },
-} as const;
+} as const
 
 export const NAVIGATION = {
   main: [
@@ -28,14 +28,14 @@ export const NAVIGATION = {
     { name: 'Projets', href: '/projects' },
     { name: 'Profil', href: '/profile' },
   ],
-} as const;
+} as const
 
 export const PAGINATION = {
   defaultPageSize: 10,
   maxPageSize: 100,
-} as const;
+} as const
 
 export const FILE_UPLOAD = {
   maxSize: 5 * 1024 * 1024, // 5MB
   allowedTypes: ['image/jpeg', 'image/png', 'image/webp'],
-} as const;
+} as const
