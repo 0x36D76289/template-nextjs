@@ -13,7 +13,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold mb-4">Produit</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link href="/features" className="hover:text-white">
+                <Link href="/about" className="hover:text-white">
                   Fonctionnalités
                 </Link>
               </li>
@@ -23,7 +23,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/integrations" className="hover:text-white">
+                <Link href="/contact" className="hover:text-white">
                   Intégrations
                 </Link>
               </li>
@@ -33,7 +33,7 @@ export function Footer() {
             <h4 className="text-sm font-semibold mb-4">Support</h4>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link href="/help" className="hover:text-white">
+                <Link href="/contact" className="hover:text-white">
                   Aide
                 </Link>
               </li>
@@ -43,7 +43,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/status" className="hover:text-white">
+                <Link href="/blog" className="hover:text-white">
                   Statut
                 </Link>
               </li>
@@ -63,7 +63,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="hover:text-white">
+                <Link href="/contact" className="hover:text-white">
                   Carrières
                 </Link>
               </li>

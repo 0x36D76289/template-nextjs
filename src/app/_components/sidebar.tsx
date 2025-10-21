@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: '📊' },
-  { name: 'Projets', href: '/projects', icon: '📁' },
-  { name: 'Profil', href: '/profile', icon: '👤' },
-  { name: 'Paramètres', href: '/profile/settings', icon: '⚙️' },
+  { name: 'Dashboard', href: '/dashboard' as const, icon: '📊' },
+  { name: 'Projets', href: '/projects' as const, icon: '📁' },
+  { name: 'Profil', href: '/profile' as const, icon: '👤' },
+  { name: 'Paramètres', href: '/profile/settings' as const, icon: '⚙️' },
 ];
 
 export function Sidebar() {
